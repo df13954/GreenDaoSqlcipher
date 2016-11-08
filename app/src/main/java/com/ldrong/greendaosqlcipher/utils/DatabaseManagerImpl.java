@@ -20,7 +20,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
 
     private static final String DBNAME = "beauty";
-    private static final String My_pwd = "beauty";
+    private static  String My_pwd = "";
     private DaoMaster.OpenHelper helper;
     private Database db;
     private DaoSession daoSession;
@@ -30,6 +30,8 @@ public class DatabaseManagerImpl implements DatabaseManager {
     public void startup(Context mContext) {
         this.mContext = mContext;
         LogUtils.e("启动数据库");
+        //这个地方，生成唯一的钥匙来访问数据库,方法是某些大神的。
+        My_pwd = new UUIDGen(mContext).getUUID();
         QueryBuilder.LOG_SQL = true;
         QueryBuilder.LOG_VALUES = true;
         getOpenHelper();

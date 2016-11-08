@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ldrong.greendaosqlcipher">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
     <application
         android:name=".base.AppContext"
         android:allowBackup="true"
